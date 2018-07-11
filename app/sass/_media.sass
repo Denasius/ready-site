@@ -1,0 +1,230 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	.main-header .title .h1
+		font-size: 3vw
+		background-image: none
+		padding-left: 0
+	.s-slider .slider-top .item .wrap .cart
+		height: em(250px)
+		width: em(163px)
+	.s-slider .bx-wrapper .bx-controls-direction .bx-next
+		right: 19vw
+	.s-slider .bx-wrapper .bx-pager
+		bottom: em(30px)
+		padding-right: 28vw
+	.s-slider .slider-top .item .order-btn button
+		font-size: 1.1vw
+	.main-header .btns button
+		font-size: 1.1vw
+
+// ≥992px
++media-breakpoint-down(md)
+	/*---------header-----------*/
+	.main-header .main-navigation a
+		font-size: 1.1vw
+	.main-header .phone p
+		font-size: 1.1vw
+	.main-header .title .h1
+		font-size: 2vw
+	.main-header .description p
+		font-size: 1.2vw
+	.perspective_image_1,
+	.perspective_image_2,
+	.main-header .images .cup-image,
+	.main-header .images .money-image
+		display: none
+	.main-header .images
+		.comp-image
+			width: 20vw
+			height: 50vh
+			img 
+				width: 100%
+	.main-header .images .elements .desigions
+		animation: shiftLeftMedia 1s linear infinite
+		animation-delay: 0
+
+	.main-header .images .elements .clients
+		animation: shiftRightMedia 1s linear infinite
+		animation-delay: 0
+
+	.main-header .images .support
+		animation: shifSupportMedia 1s linear infinite
+		animation-delay: 0
+	.main-header .btns button
+		margin-left: 1vw
+		font-family: $section-font
+
+	.section-title
+		font-size: 2vw
+	.s-slider .slider-top .item .order
+		padding-top: em(40px)
+	.s-slider .slider-top .item .order-btn button
+		padding: em(10px) em(40px)
+
+	/*-------------slider-top------------*/
+	.s-slider .slider-top .item .wrap
+		display: none
+
+	.s-request .container .row .col-sm-8 .s-request-element p:first-child
+		font-size: 2.5vw
+	.s-request .container .row .col-sm-8 .s-request-element p:nth-child(2)
+		font-size: 2vw
+	.s-request .container .row .col-sm-8 .s-request-btn
+		font-size: 1.5vw
+		font-family: $section-font
+
+
+	.grid-element-picture
+		display: none
+
+	.s-bottom-slider .slider .item .section 
+		.title
+			font-size: 3vw
+		.name-men p
+			font-size: 2vw
+		.comment p
+			font-size: 1.5vw
+	.s-bottom-slider .bx-wrapper .bx-pager
+		bottom: 20vh
+// ≥768px
++media-breakpoint-down(sm)
+	.main-header .images
+		display: none
+	.main-header .title
+		text-align: center
+		margin-top: 3em
+		.h1 
+			font-size: 3vw
+	.main-header .description p
+		font-size: 2vw
+	.main-header .btns button
+		font-size: 1.5vw
+	.main-header .main-navigation 
+		margin-top: 10px
+		margin-bottom: 10px
+		text-align: left
+		a
+			font-size: 2vw
+			&:first-child
+				padding: 0
+	.main-header .phone p
+		font-size: 2vw
+
+	.s-slider .bx-wrapper .bx-pager.bx-default-pager a
+		width: 3vw
+		height: 4vh
+	.s-slider .bx-wrapper .bx-pager
+		bottom: 15vh
+	.s-slider .bx-wrapper .bx-controls-direction .bx-next, .s-slider .bx-wrapper .bx-controls-direction .bx-prev
+		top: 76%
+	.s-slider .bx-wrapper .bx-pager
+		padding-right: 26vw
+
+	.s-desigion
+		margin-top: 0
+	.section-title
+		font-size: 3vw
+	.how_we_work
+		.section-title
+			padding-top: 10px
+
+	.s-oursite-title
+		font-size: 2vw
+	.s-oursite-description
+		font-size: 1.5vw
+
+	.s-request .lamp-pos
+		display: none
+	.s-slider .slider-top .item .order-btn button
+		font-size: 1.7vw
+
+	.s-desigion-element
+		align-items: flex-start
+	.s-desigion-element .el-img
+		width: 100%
+		text-align: center
+
+	.how_we_work .grid-element-desc .inside-element
+		margin: 10px
+		.element-item-title
+			font-size: 2vw
+		.element-item-description
+			font-size: 1.5vw
+	.how_we_work .grid-element
+		grid-template-columns: 1fr
+
+// ≥576px
++media-breakpoint-down(xs)
+	.s-slider .bx-wrapper .bx-controls-direction .bx-next, .s-slider .bx-wrapper .bx-controls-direction .bx-prev
+		display: none
+	.s-slider .slider-top .item .order-btn button
+		font-size: 3vw
+	.s-slider .slider-top .item .order-description
+		font-size: 3vw
+	footer .footer-info-logo
+		font-size: 5vw
+	footer .footer-info-nav nav a
+		font-size: 3vw
+	footer .footer-info-btn .catalog_suit
+		font-size: 3vw
+	footer .footer-info-quetion .question
+		font-size: 3vw
+	footer .footer-info-description
+		font-size: 2.5vw
+	footer .footer-bottom
+		font-size: 2.5vw
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
+
+@keyframes shiftLeftMedia
+	0%
+		transform: translateX(-40%)  
+		opacity: 1
+	50%
+		transform: translateX(-60%) 
+		opacity: 0.5
+	100%
+		transform: translateX(-90%) 
+		opacity: 0
+
+@keyframes shiftRightMedia
+	0%
+		transform: translateX(40%)  
+		opacity: 1
+	50%
+		transform: translateX(60%) 
+		opacity: 0.5
+	100%
+		transform: translateX(90%) 
+		opacity: 0
+
+@keyframes shifSupportMedia
+	0%
+		transform: translateY(20%) 
+		opacity: 1
+	50%
+		transform: translateY(60%)
+		opacity: 0.5
+	100%
+		transform: translateY(90%) 
+		opacity: 0
+	
+	

@@ -1,0 +1,32 @@
+$title-font: "gilroyExtraBold", sans-serif
+$section-font: "gilroyLight", sans-serif
+$logo-font: "rubikBlack", sans-serif
+$rubikRegular: "rubikRegular", sans-serif
+$accent: #1bc5ea
+$accent-2: #fea230
+$text: #596466
+$slider-color: #f3f4f7
+$footer-color: #2a3d6d
+$footer-bottom-color: #253865
+
+$base-size: 16px
+@function em ($px, $base: $base-size)
+	@return ($px/$base) * 1em
+
+%p-first-child
+	font-family: $logo-font
+	color: rgba(#fff, .5)
+
+%p-last-child
+	font-family: "rubikMedium", sans-serif
+	color: #fff
+	font-size: em(12px)
+	text-transform: uppercase
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px
+$grid-columns: 12
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px)
+
+$gutter: $grid-gutter-width

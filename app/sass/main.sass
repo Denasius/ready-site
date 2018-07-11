@@ -1,0 +1,953 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.section-title
+	margin-bottom: em(10px)
+	font:
+		family: $title-font
+		size: 30px
+	text-transform: uppercase
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+h1,h2,h3,h4,h5,h6,p,a 
+	margin: 0
+	padding: 0
+	text-decoration: none
+	outline: none
+
+.perspective_image_1, .perspective_image_2, .perspective_image_3
+	position: absolute
+	background-color: $accent
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+	z-index: 1
+	width: 50%	
+	transform: 1s
+	img 
+		width: 100%
+.perspective_image_1
+	background-image: url(../img/pc_img.png)
+	height: 40%
+	transform: scale(0.8) translateX(40%) translateY(60%) rotateX(-1deg) rotateY(-3deg) rotateZ(26deg) skewX(29deg) skewY(5deg)
+	animation: slap_2 2s linear infinite
+	animation-delay: 1s
+	&:after
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		bottom: 0
+		right: 0
+		background-color: rgba($accent, .5)
+
+.perspective_image_2
+	background-image: url(../img/pc_img_2.png)
+	height: 30%
+	transform: scale(0.9) translateX(30%) translateY(112%) rotateX(-3deg) rotateY(3deg) rotateZ(27deg) skewX(29deg) skewY(5deg)
+	animation: slap_1 2s linear infinite
+.main-header
+	background: rgb(36,39,90)
+	background: linear-gradient(90deg, rgba(36,39,90,1) 5%, rgba(40,133,189,1) 67%, rgba(0,212,255,1) 100%)
+	padding-top: em(20px)
+	.logo 
+		p 
+			color: #fff
+			font-family: $logo-font
+			font-size: em(20px)
+			text-transform: uppercase
+	.main-navigation
+		text-align: center
+		a 
+			color: #fff
+			font-size: em(14px)
+			font-family: $title-font
+			text-transform: uppercase
+			padding: em(5px) em(15px)
+			text-decoration: none
+			outline: none
+			margin-right: 5px
+			transition: all .5s ease
+			border: 1px solid transparent
+			&:hover
+				color: #f09b34
+				border-top-color: rgba(#fff, .8)
+				border-bottom-color: rgba(#fff, .8)
+				border-left-color: rgba(#fff, .5)
+				border-right-color: rgba(#fff, .5)
+				transition: all .5s ease
+	.phone
+		margin-bottom: em(-10px)
+		p 
+			font-family: "rubikBold", sans-serif
+			font-size: em(16px)
+			color: #fff
+	.text 
+		a 
+			small
+				text-decoration: underline
+				color: #fff
+				font-size: em(12px)
+				font-family: $rubikRegular
+	.title
+		margin-top: em(145px)
+		margin-bottom: em(55px)
+		margin-left: em(10px)
+		.h1
+			font-family: $title-font
+			font-size: em(40px)
+			color: #fff
+			text-transform: uppercase
+			background-image: url(../img/underline.png)
+			background-position: -2px 36px
+			background-repeat: no-repeat
+			padding-left: em(10px)
+			animation: animateLine 2s linear alternate
+			animation-delay: 2s
+	.description
+		margin-bottom: em(40px)
+		margin-left: em(10px)
+		p 
+			font-family: "rubikMedium", sans-serif
+			color: #fff
+			font-size: em(16px)
+	.btns
+		margin-bottom: em(140px)
+		margin-left: em(10px)
+		button
+			padding: em(15px)
+			color: #fff
+			font-family: $title-font
+			border: none
+			background-color: transparent
+			text-transform: uppercase
+			border: 2px solid #f09b34
+			margin-left: em(45px)
+			cursor: pointer
+			transition: 0.5s
+			&:first-child
+				margin: 0
+			&:last-child
+				padding: em(15px) em(60px)
+			&:hover
+				background-color: #f09b34
+	.images
+		position: relative
+		margin-top: em(90px)
+		&:before, &:after
+			content: ''
+			position: absolute
+			border: 1px dashed rgba(#fff, .5)
+			left: -20px
+			right: 20px
+			top: -10px
+			bottom: 20px
+			transform: translate(-10%)
+			border-radius: 50%
+			animation: pulse 1.8s linear infinite
+		&:after
+			animation-delay: .5s
+		.cup-image
+			position: absolute
+			top: 33%
+		.elements
+			display: flex
+			justify-content: space-between
+			align-items: center
+			position: absolute
+			width: 100%
+			.desigions
+				position: relative
+				animation: shiftLeft 1.8s linear infinite
+				p
+					&:first-child
+						@extend %p-first-child
+					&:last-child
+						@extend %p-last-child
+				&:after
+					position: absolute
+					content: ''
+					left: em(23px)
+					bottom: em(-40px)
+					width: 1px
+					height: 40px
+					background-color: rgba(#fff, .3)
+					box-shadow: 2px 2px 2px rgba(#fff, .3)
+				&:before 
+					position: absolute
+					content: ''
+					height: 1px
+					width: em(89px)
+					left: em(24px)
+					bottom: em(-40px)
+					background-color: rgba(#fff, .3)
+					box-shadow: 2px 2px 2px rgba(#fff, .3)
+			.clients
+				position: relative
+				animation: shiftRight 1.8s linear infinite
+				animation-delay: .3s
+				p
+					&:first-child
+						@extend %p-first-child
+					&:last-child
+						@extend %p-last-child
+				&:after
+					position: absolute
+					content: ''
+					left: em(23px)
+					bottom: em(-40px)
+					width: 1px
+					height: 40px
+					background-color: rgba(#fff, .3)
+					box-shadow: 2px 2px 2px rgba(#fff, .3)
+				&:before 
+					position: absolute
+					content: ''
+					height: 1px
+					width: em(89px)
+					left: em(-64px)
+					bottom: em(-40px)
+					background-color: rgba(#fff, .3)
+					box-shadow: 2px 2px 2px rgba(#fff, .3)
+		.comp-image			
+			perspective: 1000px
+		.support
+			position: relative
+			animation: shifSupport 1.5s linear infinite
+			animation-delay: .5s
+			&:after
+				position: absolute
+				content: ''
+				left: em(23px)
+				top: em(-40px)
+				width: 1px
+				height: 40px
+				background-color: rgba(#fff, .3)
+				box-shadow: 2px 2px 2px rgba(#fff, .3)
+			&:before 
+				position: absolute
+				content: ''
+				height: 1px
+				width: em(89px)
+				left: em(24px)
+				top: em(-40px)
+				background-color: rgba(#fff, .3)
+				box-shadow: 2px 2px 2px rgba(#fff, .3)
+			p 
+				&:first-child
+					@extend %p-first-child
+				&:last-child
+					@extend %p-last-child
+		.money-image
+			position: absolute
+			bottom: 13%
+			left: 32%
+
+/*-------------S-SLIDER*---------------*/
+.s-slider
+	width: 100%
+	height: em(540px)
+	perspective: 1000px
+	transform-style: preserve-3d
+	.slider-top
+		.item 
+			background-color: $slider-color
+			height: 100vh
+			.wrap
+				width: 100%
+				height: 100%
+				display: flex
+				justify-content: center
+				align-items: center
+				flex-wrap: wrap
+				transition: 1s
+				transform: translateY(-3%) rotateX(45deg) rotateZ(-15deg) rotateY(5deg)
+				.cart
+					width: 200px
+					height: 350px
+					margin: 20px 10px
+					box-shadow: -5px 5px 10px 2px rgba(#333, .5)
+					transition: .5s
+					cursor: pointer
+					&:hover
+						transform: translateY(20px)
+					img 
+						width: 100%
+						height: 100%
+			.order
+				display: flex
+				flex-direction: column
+				justify-content: center
+				align-items: flex-start
+				width: 100%
+				height: 85%
+				margin-left: em(40px) 
+				&-description
+					margin-bottom: em(40px)
+					font-family: $section-font
+					color: #000
+				&-btn 
+					button
+						border: none
+						font-family: $title-font
+						text-transform: uppercase
+						background-color: $accent-2
+						color: #fff
+						padding: 10px 30px
+						cursor: pointer
+						transition: .5s
+						letter-spacing: 1.5px
+						&:hover
+							background-color: rgba($accent-2, .8)
+
+.s-slider .bx-wrapper
+	margin-bottom: 0 
+	border: none
+	.bx-viewport
+		overflow: visible !important
+	.bx-pager
+		padding: 0
+		bottom: 50px
+		text-align: right
+		padding-right: 30vw
+
+.s-slider .bx-wrapper .bx-pager.bx-default-pager a:focus, .s-bottom-slider .bx-wrapper .bx-pager.bx-default-pager a:hover
+	background-color: #fff
+	color: #fff
+.s-slider .bx-wrapper .bx-pager.bx-default-pager a
+	background: #fff
+	transition: all .3s
+	width: 20px
+	height: 20px
+	border-radius: 50%
+	border: 1px solid rgba($text, .2)
+.s-slider .bx-wrapper .bx-pager.bx-default-pager a.active
+	background-color: $accent-2
+	border: none
+
+.bx-has-pager
+	border: none
+
+.s-slider .bx-wrapper .bx-controls-direction a
+	text-indent: 0
+
+.s-slider .bx-wrapper .bx-controls-direction .bx-prev, 
+.s-slider .bx-wrapper .bx-controls-direction .bx-next
+	position: absolute
+	top: 85%
+	font-size: 4rem
+	color: $accent-2
+	transition: all .5s
+	font-family: $section-font
+	&:hover
+		outline: none
+		text-decoration: none
+	&:focus
+		color: $text
+
+.s-slider .bx-wrapper .bx-controls-direction .bx-next
+	right: 22vw
+
+.s-slider .bx-wrapper .bx-controls-direction .bx-prev
+	left: 53vw
+
+/*----------------S-DESIGION-----------*/
+.s-desigion
+	margin-top: em(150px)
+	&-element
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		.el-img
+			margin: em(10px) 0 em(20px) 0
+		.el-title
+			font:
+				size: em(22px)
+				family: $title-font
+		.el-description
+			font:
+				family: $section-font
+				size: em(14px)
+			&>p 
+				margin-bottom: em(25px)
+
+/*--------------S-OURSITE--------------*/
+.s-oursite
+	margin-top: em(95px)
+	.el 
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		.do 
+			margin-top: em(60px) 
+			margin-bottom: em(20px)
+			position: relative
+			&.do_1
+				&:before 
+					position: absolute
+					content: '1'
+					top: 0
+					left: 15px
+					width: 20px
+					height: 20px
+					line-height: 20px
+					border-radius: 50%
+					background-color: #d9cf41
+					color: #000
+					text-align: center
+					font-size: em(14px)
+					font-family: $section-font
+			&.do_2
+				&:before 
+					position: absolute
+					content: '2'
+					top: 0
+					left: 15px
+					width: 20px
+					height: 20px
+					line-height: 20px
+					border-radius: 50%
+					background-color: #d9cf41
+					color: #000
+					text-align: center
+					font-size: em(14px)
+					font-family: $section-font
+			&.do_3
+				&:before 
+					position: absolute
+					content: '3'
+					top: 0
+					left: 15px
+					width: 20px
+					height: 20px
+					line-height: 20px
+					border-radius: 50%
+					background-color: #d9cf41
+					color: #000
+					text-align: center
+					font-size: em(14px)
+					font-family: $section-font
+	&-title
+		font:
+			size: em(26px)
+			family: $title-font
+		color: #000
+		text-transform: uppercase
+	&-description 
+		font:
+			size: em(18px)
+			family: $section-font
+		text-transform: uppercase
+
+/*------------S-REQUEST---------------*/
+
+.s-request
+	width: 100%
+	height: em(295px)
+	margin-top: em(130px)
+	background-color: rgba(#181a58, .9)
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+	.container 
+		height: 100%
+		.row 
+			height: 100%
+			.col-sm-8
+				height: 100%
+				.s-request-element 
+					height: 100%
+					display: flex
+					flex-direction: column
+					justify-content: center
+					align-items: flex-start
+					p 
+						&:first-child
+							font:
+								size: em(38px)
+								family: $title-font
+							color: #fff
+							text-transform: uppercase
+						&:nth-child(2)
+							font: 
+								size: em(24px)
+								family: $section-font
+							color: #fff
+							text-transform: uppercase
+				.s-request-btn
+					color: #fff
+					text-transform: uppercase
+					font-family: $title-font
+					background-color: $accent-2
+					padding: em(10px) em(30px)
+					border: none
+					margin-top: em(40px)
+	.lamp-pos
+		position: relative
+		.lamp-img
+			position: absolute
+			right: 0
+			bottom: 0
+
+/*------------S-GET----------------*/
+.s-get
+	margin-top: em(100px)
+	margin-bottom: em(100px)
+	&-desc 
+		height: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		padding-bottom: em(55px)
+		&-title 
+			font:
+				family: $title-font
+				size: em(20px)
+			text-transform: uppercase
+			margin-bottom: em(30px)		
+		&-point
+			ul
+				li 
+					color: #1a4699
+					span 
+						color: $text
+		&-img
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 100%
+
+.section-margin
+	margin-bottom: em(50px)
+
+.go_catalog
+	margin-top: em(80px)
+	width: 100%
+	text-align: center
+	padding-bottom: em(15px)
+	a
+		border: none
+		text-transform: uppercase
+		background-color: $accent-2
+		font-family: $title-font
+		padding: em(15px) em(70px)
+		color: #fff
+		cursor: pointer
+		transition: all .3s
+		outline: none
+		text-decoration: none
+		&:hover
+			background-color: lighten($accent-2, 5%)
+
+/*-----------HOW-WE-WORK-------------*/
+.how_we_work
+	background-color: #ecf2f4
+	position: relative
+	padding-left: em(120px)
+	.section-title
+		padding-top: 100px
+	.grid-element
+		display: grid
+		grid-template-columns: 2fr 1fr
+		&-desc 
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			grid-gap: 40px
+			grid-auto-rows: 100px
+			.inside-element
+				.element-item-title
+					font:
+						family: $title-font
+						size: em(20px)
+					text-transform: uppercase
+				.element-item-description
+					font-family: $section-font
+		&-picture
+			.picture
+				position: absolute
+				top: 0
+				width: 57%
+				img 
+					width: 100%
+
+/*------------S-BOTTOM-SLIDER---------*/
+
+.s-bottom-slider
+	.slider
+		.item 
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
+			padding-top: em(100px)
+			padding-bottom: em(200px)
+			.section
+				display: flex
+				justify-content: flex-start
+				align-items: flex-start
+				flex-direction: column
+				width: 50%
+				&.section-color
+					.title  
+						color: #000
+					.name 
+						&-men
+							p 
+								color: #000
+					.comment
+						color: #000
+				.title
+					font:
+						size: em(30px)
+						family: $title-font
+					color: #ffffff
+					text-transform: uppercase
+					margin-bottom: em(55px)
+				.name
+					display: flex
+					align-items: center
+					&-photo
+						border: 2px solid #1bc5ea
+						border-radius: 50%
+						width: em(80px)
+						height: em(80px)
+						overflow: hidden
+						margin-right: em(35px)
+						img 
+							width: 100%
+					#strok-panel-red
+						border: 2px solid #d87d84
+					&-men 
+						p 
+							font:
+								size: em(24px)
+								family: $title-font
+							text-transform: uppercase
+							color: #fff
+							&:last-child
+								text-transform: lowercase
+								font-size: em(18px)
+								font-family: $section-font
+				.comment
+					font-family: $section-font
+					color: #fff
+					margin-top: em(55px)
+
+.s-bottom-slider .bx-wrapper
+	margin-bottom: 0 
+	border: none
+	.bx-pager
+		padding: 0
+		bottom: 50px
+
+.s-bottom-slider .bx-wrapper .bx-pager.bx-default-pager a:focus, .s-bottom-slider .bx-wrapper .bx-pager.bx-default-pager a:hover
+	background-color: #fff
+	color: #fff
+.s-bottom-slider .bx-wrapper .bx-pager.bx-default-pager a
+	background: #fff
+	width: 15px
+	height: 20px
+	transition: all .3s
+.s-bottom-slider .bx-wrapper .bx-pager.bx-default-pager a.active
+	background-color: $accent-2
+	height: 30px
+
+/*-------------FOOTER-----------------*/
+footer 
+	.footer-info
+		padding-top: em(55px)
+		background-color: $footer-color
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		&-logo
+			padding-bottom: em(35px)
+			font:
+				size: em(28px)
+				family: $title-font
+			color: #fff
+			text-transform: uppercase
+			span 
+				font-family: $section-font
+		&-nav
+			padding-bottom: em(30px)
+			nav 
+				a 
+					font-family: $title-font
+					font-size: em(14px)
+					color: #fff
+					padding-right: em(45px)
+					text-transform: uppercase
+					&:last-child
+						padding: 0
+					&:hover
+						outline: none
+						text-decoration: none
+		&-btn
+			margin-bottom: em(30px)
+			position: relative
+			padding: 0 em(40px)
+			&:before
+				position: absolute
+				content: ''
+				top: 50%
+				left: 100%
+				width: 200%
+				height: 1px
+				background-color: rgba(#fff, .4)
+			&:after				
+				position: absolute
+				content: ''
+				top: 50%
+				right: 100%
+				width: 200%
+				height: 1px
+				background-color: rgba(#fff, .4)
+			.catalog_suit
+				padding: em(15px) em(65px)
+				border: none
+				text-transform: none
+				background-color: $accent-2
+				color: #fff
+				font:
+					family: $title-font
+				text-transform: uppercase 
+				transition: all .3s
+				box-shadow: 2px 2px 5px rgba(#fff, .5)
+				&:hover
+					text-decoration: none
+					outline: none
+					background-color: lighten($accent-2, 5%)
+		&-quetion
+			margin-bottom: em(55px)
+			padding: 0 em(40px)
+			position: relative
+			&:before
+				position: absolute
+				content: ''
+				top: 50%
+				left: 100%
+				width: 200%
+				height: 1px
+				background-color: rgba(#fff, .4)
+			&:after				
+				position: absolute
+				content: ''
+				top: 50%
+				right: 100%
+				width: 200%
+				height: 1px
+				background-color: rgba(#fff, .4)
+			.question
+				padding: em(15px) em(72px)
+				border: none
+				text-transform: none
+				background-color: #282cd0
+				color: #fff
+				font:
+					family: $title-font
+				text-transform: uppercase 
+				transition: all .3s
+				box-shadow: 2px 2px 5px rgba(#fff, .5)
+				&:hover
+					text-decoration: none
+					outline: none
+					background-color: lighten(#282cd0, 5%)
+		&-social
+			margin-bottom: em(30px)
+			a 
+				margin-right: em(15px)
+				&:hover
+					text-decoration: none
+					outline: none
+		&-description
+			margin-bottom: em(45px)
+			font:
+				size: em(14px)
+				family: $section-font
+			color: #fff
+	.footer-bottom
+		background-color: $footer-bottom-color
+		display: flex
+		justify-content: center
+		align-items: center
+		padding: em(25px) 0
+		color: #fff
+		font-family: $section-font
+		font-size: em(14px)
+		text-transform: uppercase
+		span 
+			color: #4c67ab
+
+/*-------------ANIMATION--------------*/
+
+@keyframes pulse 
+	0% 
+		transform: scale(0.5)
+		opacity: 0
+	50%
+		opacity: 1
+	100%
+		transform: scale(1.2)
+		opacity: 0
+
+@keyframes shiftLeft
+	0%
+		transform: translateX(0)  
+		opacity: 1
+	10%
+		transform: translateX(-10%) 
+		opacity: 0.9
+	20%
+		transform: translateX(-20%) 
+		opacity: 0.8
+	30%
+		transform: translateX(-30%) 
+		opacity: 0.7
+	40%
+		transform: translateX(-40%) 
+		opacity: 0.6
+	50%
+		transform: translateX(-50%)
+		opacity: 0.5
+	60%
+		transform: translateX(-60%) 
+		opacity: 0.4
+	70%
+		transform: translateX(-70%) 
+		opacity: 0.3
+	80%
+		transform: translateX(-80%) 
+		opacity: 0.2
+	90%
+		transform: translateX(-90%) 
+		opacity: 0.1
+	100%
+		transform: translateX(-100%) 
+		opacity: 0
+
+@keyframes shiftRight
+	0%
+		transform: translateX(0)
+		opacity: 1
+	10%
+		transform: translateX(10%)
+		opacity: 0.9
+	20%
+		transform: translateX(20%)
+		opacity: 0.8
+	30%
+		transform: translateX(30%)
+		opacity: 0.7
+	40%
+		transform: translateX(40%)
+		opacity: 0.6
+	50%
+		transform: translateX(50%)
+		opacity: 0.5
+	60%
+		transform: translateX(60%)
+		opacity: 0.4
+	70%
+		transform: translateX(70%)
+		opacity: 0.3
+	80%
+		transform: translateX(80%)
+		opacity: 0.2
+	90%
+		transform: translateX(90%)
+		opacity: 0.1
+	100%
+		transform: translateX(100%)
+		opacity: 0
+
+@keyframes shifSupport
+	0%
+		transform: translateY(0) 
+		opacity: 1
+	10%
+		transform: translateY(10%)
+		opacity: 0.9
+	20%
+		transform: translateY(20%) 
+		opacity: 0.8
+	30%
+		transform: translateY(30%) 
+		opacity: 0.7
+	40%
+		transform: translateY(40%) 
+		opacity: 0.6
+	50%
+		transform: translateY(50%) 
+		opacity: 0.5
+	60%
+		transform: translateY(60%)
+		opacity: 0.4
+	70%
+		transform: translateY(70%) 
+		opacity: 0.3
+	80%
+		transform: translateY(80%)
+		opacity: 0.2
+	90%
+		transform: translateY(90%) 
+		opacity: 0.1
+	100%
+		transform: translateY(100%)
+		opacity: 0
+
+@keyframes animateLine
+	0%
+		background-size: 0 90%
+	20%
+		background-size: 20% 90%
+	40%
+		background-size: 40% 90%
+	60%
+		background-size: 60% 90%
+	80%
+		background-size: 80% 90%
+	100%
+		background-size: 90% 90%
+
+
+
+@import "media" // Always at the end
