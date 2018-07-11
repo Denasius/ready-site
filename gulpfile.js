@@ -91,7 +91,7 @@ gulp.task('build', ['removedist', 'imagemin', 'styles', 'js'], function() {
 
 	var buildJs = gulp.src([
 		'app/js/scripts.min.js',
-		'app/js/slider.min.js',
+		'app/js/preloader.js'
 		]).pipe(gulp.dest('dist/js'));
 
 	var buildFonts = gulp.src([

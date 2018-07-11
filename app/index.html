@@ -24,9 +24,33 @@
 
 	<link rel="stylesheet" href="css/main.min.css">
 
+
 </head>
 
 <body>
+	<div id="page-preloader" class="preloader">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Modal -->
+	<div class="overlay_modal"></div>
+		<div class="window_modal">
+
+			<div class="el">
+				
+				<p class="p_modal">Как к вам обращаться?</p>
+
+				<form class="form_modal" id="form">
+					
+					<input type="text" name="modal_name" class="form_name_control" placeholder="Ваше имя">
+					<input type="email" name="modal_email" class="form_email_control" placeholder="Ваш e-mail">
+					<button type="submit" class="btn-danger"><span class="order-name"></span></button>
+		 
+				</form>
+
+			</div>
+
+	</div>
 
 	<header class="main-header">
 		
@@ -60,7 +84,7 @@
 					<div class="phone"><p>123456789</p></div>
 					<div class="text">
 							
-						<a href="#"><small>получить консультацию</small></a>
+						<button data-popup="true" data-order="получить консультацию"><small>получить консультацию</small></button>
 
 					</div>
 
@@ -394,7 +418,7 @@
 
 			<div class="row">
 				
-				<div class="col-4">
+				<div class="col-12 col-md-4">
 					<div class="el">
 						
 						<div class="do do_1">
@@ -412,7 +436,7 @@
 					</div>
 				</div>
 
-				<div class="col-4">
+				<div class="col-12 col-md-4">
 					<div class="el">
 						
 						<div class="do do_2">
@@ -430,7 +454,7 @@
 					</div>
 				</div>
 
-				<div class="col-4">
+				<div class="col-12 col-md-4">
 					<div class="el">
 						
 						<div class="do do_3">
@@ -462,7 +486,7 @@
 						
 						<p>оставте заявку сейчас,</p>
 						<p>и мы бесплатно подберем сайт под ваш бизнес</p>
-						<button class="s-request-btn">бесплатно подобрать сайт</button>
+						<button class="s-request-btn" data-popup="true" data-order="подобрать сайт">бесплатно подобрать сайт</button>
 
 					</div>
 				</div>
@@ -888,7 +912,7 @@
 
 			<div class="footer-info-quetion">
 				
-				<button class="question">задать вопрос</button>
+				<button class="question" data-popup="true" data-order="задать вопрос">задать вопрос</button>
 
 			</div>
 
@@ -918,7 +942,8 @@
 
 	</footer>
 
-	<script src="js/scripts.min.js"></script>
+	<script src="js/preloader.js"></script>
 
+	<script src="js/scripts.min.js"></script>
 </body>
 </html>
