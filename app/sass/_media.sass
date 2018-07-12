@@ -94,17 +94,22 @@
 		bottom: 20vh
 // ≥768px
 +media-breakpoint-down(sm)
+	.link
+		display: block
 	.main-header .images
 		display: none
 	.main-header .title
 		text-align: center
 		margin-top: 3em
 		.h1 
-			font-size: 3vw
+			font-size: 5vw
 	.main-header .description p
-		font-size: 2vw
-	.main-header .btns button
-		font-size: 1.5vw
+		font-size: 2.5vw
+	.main-header .btns 
+		display: flex
+		justify-content: space-around
+		button
+			font-size: 2vw
 	.main-header .main-navigation 
 		margin-top: 10px
 		margin-bottom: 10px
@@ -116,20 +121,28 @@
 	.main-header .phone p
 		font-size: 2vw
 
+	.s-slider .order-header
+		width: 100%
+		margin-top: em(10px)
+
 	.s-slider .bx-wrapper .bx-pager.bx-default-pager a
 		width: 3vw
 		height: 4vh
-	.s-slider .bx-wrapper .bx-pager
-		bottom: 15vh
+
 	.s-slider .bx-wrapper .bx-controls-direction .bx-next, .s-slider .bx-wrapper .bx-controls-direction .bx-prev
 		top: 76%
 	.s-slider .bx-wrapper .bx-pager
 		padding-right: 26vw
+		bottom: 20vh
 
 	.s-desigion
 		margin-top: 0
 	.section-title
-		font-size: 3vw
+		font-size: 5vw
+
+	.s-slider .bx-wrapper .bx-controls-direction .bx-next, .s-slider .bx-wrapper .bx-controls-direction .bx-prev
+		display: none
+
 	.how_we_work
 		.section-title
 			padding-top: 10px
@@ -138,17 +151,27 @@
 		font-size: 4vw
 	.s-oursite-description
 		font-size: 2.5vw
-
-	.s-request .lamp-pos
-		display: none
-	.s-slider .slider-top .item .order-btn button
-		font-size: 1.7vw
+	.s-slider .slider-top .item 
+		.order-description
+			width: 100%
+			text-align: center
+		.order-btn 
+			width: 100%
+			text-align: center
+			button
+				font-size: 2.5vw
 
 	.s-desigion-element
 		align-items: flex-start
-	.s-desigion-element .el-img
-		width: 100%
-		text-align: center
+		margin-bottom: em(20px)
+		.el-img
+			width: 100%
+			text-align: center
+			img 
+				max-width: 100%
+		.el-title
+			width: 100%
+			text-align: center
 
 	.how_we_work .grid-element-desc .inside-element
 		margin: 10px
@@ -181,12 +204,43 @@
 
 // ≥576px
 +media-breakpoint-down(xs)
-	.s-slider .bx-wrapper .bx-controls-direction .bx-next, .s-slider .bx-wrapper .bx-controls-direction .bx-prev
-		display: none
-	.s-slider .slider-top .item .order-btn button
-		font-size: 3vw
+	.s-slider 
+		display: flex
+		align-items: center
+		.slider-top .item 
+			.order 
+				margin: 0
+				.order-btn button
+					font-size: 3vw
 	.s-slider .slider-top .item .order-description
 		font-size: 3vw
+	.s-slider .bx-wrapper 
+		margin-top: -4em
+		.bx-pager.bx-default-pager a
+			width: 2vw
+			height: 2vw
+	.s-request .container .row .col-sm-8 .s-request-btn
+		font-size: 3vw
+		z-index: 1
+	.s-request .container .row .col-sm-8 .s-request-element p:first-child
+		font-size: 4vw
+		z-index: 1
+	.s-request .lamp-pos .lamp-img img
+		position: relative
+		width: 80%
+		right: em(-45px)
+	.how_we_work
+		padding: 0
+		.grid-element
+			padding: em(10px)
+			.grid-element-desc 
+				.inside-element
+					.element-item-title
+						font-size: 3vw
+					.element-item-description
+						font-size: 2.8vw
+	.s-bottom-slider
+		display: none
 	footer .footer-info-logo
 		font-size: 5vw
 	footer .footer-info-nav nav a

@@ -57,6 +57,206 @@ body
 		transform: translate(-50%, -50%) rotate(360deg)
 
 
+
+/*----------MODAL----------*/
+.overlay_modal
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(0,0,0,.8)
+	display: none
+	z-index: 200
+	transition: all 0.5s ease
+.window_modal
+	position: fixed
+	width: em(390px)
+	height: em(390px)
+	left: 50%
+	top: 50%
+	transform: translate(-50%, 200%)
+	padding: 0
+	background-color: #fcfcfc
+	z-index: 210
+	display: grid 
+	grid-template-rows: 200px 276px
+	overflow: hidden
+	border-radius: 10px
+	transition: all 0.5s ease
+	.el
+		display: flex 
+		flex-direction: column
+		justify-content: space-around
+		align-items: center
+		width: 100%
+		padding: 20px
+		height: max-content
+		.p_modal
+			padding-top: em(80px)
+			padding-bottom: 1em
+			font-family: $section-font
+			font-size: em(16px)
+			color: $black
+		form 
+			display: flex
+			flex-direction: column
+			justify-content: space-around
+			align-items: center
+			width: 100%
+			input, button 
+				width: 100%
+				margin: 10px 0
+				border: none
+				border-radius: 10px
+				padding: 10px 0
+				font-family: "MontserattLight", sans-serif
+			input
+				background-color: #e6e7ea
+				padding-left: 20px
+				padding-right: 20px
+				color: rgba($black, .6)
+			button 
+				background-color: $accent
+				text-transform: uppercase
+				font-size: 16px
+				color: #fff
+				cursor: pointer
+				transition: all 0.5s ease
+				&:hover
+					background-color: lighten($accent, 5)
+
+.window_modal_active
+	transform: translate(-50%, -50%);
+
+/*-------------ADAPTIVE MENU------------*/
+
+.link
+	display: none
+	position: absolute
+	text-align: center
+	width: 30px
+	height: 30px
+	background-color: rgba(#000, .3)
+	cursor: pointer
+	z-index: 100
+	transition: all .5s
+	a 
+		span 
+			position: absolute;
+			top: 50%;
+			margin-top: -0.0625em;
+			left: 50%;
+			margin-left: -0.625em;
+			width: 1.25em;
+			height: 2px;
+			background-color: #fff
+			&:before 
+				content: ''
+				position: absolute
+				top: 50%
+				margin-top: em(-1px)
+				left: 50%
+				margin-left: em(-10px)
+				width: em(20px)
+				height: 2px
+				background-color: #fff
+				transform: translateY(-5px)
+				transition: 0.3s
+			&:after
+				content: ''
+				position: absolute
+				top: 50%
+				margin-top: em(-1px)
+				left: 50%
+				margin-left: em(-10px)
+				width: em(20px)
+				height: 2px
+				background-color: #fff
+				transform: translateY(3px)
+				transition: 0.3s
+				margin-top: 1px
+		&.menu-btn-active
+			position: fixed
+			transition: 0.5s
+			z-index: 100
+			span 
+				height: 0
+				&:before 
+					transform: rotate(45deg)
+				&:after
+					transform: rotate(-45deg)
+.adaptive-menu
+	position: fixed
+	top: 0
+	left: 0
+	padding-top: em(20px)
+	width: 90%
+	background-color: rgba(#000, .9)
+	border: 2px solid transparent
+	border-right-color: rgba($accent, .8)
+	z-index: 10
+	height: 100vh
+	display: flex
+	justify-content: space-between
+	align-items: center
+	flex-direction: column
+	transition: all .5s
+	transform: translateX(-200%)
+	.logo 
+		.title 
+			text-align: center
+			font-size: em(20px)
+			text-transform: uppercase
+			font-family: $title-font
+			color: #fff
+	.nav-div-main
+		display: flex
+		justify-content: spase-arownd
+		align-items: center
+		flex-direction: column
+		a 
+			color: #fff
+			font-family: $section-font
+			font-size: em(16px)
+			text-transform: uppercase
+			padding: em(20px) 0
+	.call 
+		text-align: center
+		.phone
+			font-size: em(16px)
+			color: #fff
+			font-family: $title-font
+			p 
+				letter-spacing: 1px
+		.text 
+			text-align: center
+			padding-bottom: em(20px)
+			button 
+				font-size: em(14px)
+				color: #fff
+				font-family: $section-font
+				border: none
+				background-color: transparent
+				cursor: pointer
+
+.adaptive-menu-active 
+	transition: all .5s
+	transform: translateX(0)
+.link-active
+	transition: all .5s
+	transform: translateX(90vw)
+	a 
+		span 
+			height: 0
+			&:before 
+				transform: rotate(135deg)
+				box-shadow: 1px 1px 2px rgba(#fff, .6)
+			&:after
+				transform: rotate(-135deg)
+				box-shadow: 1px 1px 2px rgba(#fff, .6)
+
+
 /*--------------HEADER---------------*/
 
 .section-title
@@ -458,6 +658,8 @@ h1,h2,h3,h4,h5,h6,p,a
 			margin-top: em(60px) 
 			margin-bottom: em(20px)
 			position: relative
+			img 
+				width: 100%
 			&.do_1
 				&:before 
 					position: absolute
@@ -568,6 +770,8 @@ h1,h2,h3,h4,h5,h6,p,a
 			position: absolute
 			right: 0
 			bottom: 0
+			img 
+				width: 100%
 
 /*------------S-GET----------------*/
 .s-get
@@ -861,76 +1065,6 @@ footer
 		span 
 			color: #4c67ab
 
-/*----------MODAL----------*/
-.overlay_modal
-	position: fixed
-	left: 0
-	top: 0
-	width: 100%
-	height: 100%
-	background-color: rgba(0,0,0,.8)
-	display: none
-	z-index: 200
-	transition: all 0.5s ease
-.window_modal
-	position: fixed
-	width: em(390px)
-	height: em(390px)
-	left: 50%
-	top: 50%
-	transform: translate(-50%, 200%)
-	padding: 0
-	background-color: #fcfcfc
-	z-index: 210
-	display: grid 
-	grid-template-rows: 200px 276px
-	overflow: hidden
-	border-radius: 10px
-	transition: all 0.5s ease
-	.el
-		display: flex 
-		flex-direction: column
-		justify-content: space-around
-		align-items: center
-		width: 100%
-		padding: 20px
-		height: max-content
-		.p_modal
-			padding-top: em(80px)
-			padding-bottom: 1em
-			font-family: $section-font
-			font-size: em(16px)
-			color: $black
-		form 
-			display: flex
-			flex-direction: column
-			justify-content: space-around
-			align-items: center
-			width: 100%
-			input, button 
-				width: 100%
-				margin: 10px 0
-				border: none
-				border-radius: 10px
-				padding: 10px 0
-				font-family: "MontserattLight", sans-serif
-			input
-				background-color: #e6e7ea
-				padding-left: 20px
-				padding-right: 20px
-				color: rgba($black, .6)
-			button 
-				background-color: $accent
-				text-transform: uppercase
-				font-size: 16px
-				color: #fff
-				cursor: pointer
-				transition: all 0.5s ease
-				&:hover
-					background-color: lighten($accent, 5)
-
-.window_modal_active
-	transform: translate(-50%, -50%);
 
 /*-------------ANIMATION--------------*/
 

@@ -1,17 +1,24 @@
 $(function() {
 
-	$('.count').each(function () {
-		$(this).prop('Counter', 0).delay(2000).animate({
-			Counter: $(this).text()
-		},
-		{
-			duration: 4000,
-			easing: 'swing',
-			step: function (n) {
-				$(this).text(Math.ceil(n));
-			}
-		});
+	$('#click_button').on('click', function () {
+		$(this).toggleClass('link-active');
+		$('.adaptive-menu').toggleClass('adaptive-menu-active ');
 	});
+
+	setInterval(function () {
+		$('.count').each(function () {
+			$(this).prop('Counter', 0).delay(2000).animate({
+				Counter: $(this).text()
+			},
+			{
+				duration: 4000,
+				easing: 'swing',
+				step: function (n) {
+					$(this).text(Math.ceil(n));
+				}
+			});
+		});
+	}, 4000);
 
 	$('.slider').bxSlider();
 
@@ -30,8 +37,7 @@ $(function() {
 		modal.toggleClass('window_modal_active');
 		overlay.hide();
 	});
-	link.on('click', function (e) {
-		e.preventDefault();
+	link.on('click', function () {
 		orderName.text($(this).attr('data-order'));
 		overlay.show();
 		modal.toggleClass('window_modal_active');
